@@ -2,6 +2,11 @@
 
 Jsnapy bundled into a Docker image for ease of use with some test cases included.
 
+## Installation
+
+- Install Docker on your workstation.
+- Docker image is already built and should download automatically from Docker Hub wirescrossed/jsnapy:latest.
+
 ## Usage
 
 ### Before Change Event
