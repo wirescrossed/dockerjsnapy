@@ -1,0 +1,7 @@
+hosts:
+  - device: 10.1.1.1
+    username: admin
+tests:
+- bgp_summary.yml
+- isis_adjacency.yml
+- interface_status.yml

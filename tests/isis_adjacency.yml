@@ -1,0 +1,8 @@
+test_isis_peers:
+  - command: show isis adjacency
+  - iterate:
+      xpath: //isis-adjacency-information/isis-adjacency
+      id: './interface-name'
+      tests:
+        - no-diff: adjacency-state
+          err: "Test Failed!! peer state for {{id_0}} got changed, before it was <{{pre['adjacency-state']}}>, now it is <{{post['adjacency-state']}}>"
