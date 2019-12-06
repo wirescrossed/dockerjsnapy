@@ -1,0 +1,10 @@
+test_lldp_peers:
+  - command: show lldp neighbor
+  - iterate:
+      xpath: //lldp-neighbors-information/lldp-neighbor-information
+      id: 
+        - './lldp-local-port-id'
+        - './lldp-remote-system-name'
+      tests:
+        - no-diff: lldp-remote-system-name
+          err: "Test Failed!! LLDP {{id_0}} {{id_1}} got changed."
