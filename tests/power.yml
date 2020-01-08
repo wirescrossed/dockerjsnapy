@@ -1,0 +1,9 @@
+test_power:
+  - command: show chassis environment pem
+  - iterate:
+      xpath: //environment-component-information/environment-component-item
+      id: 
+        - './name'
+      tests:
+        - contains: state, Online
+          err: "Test Failed!! Power State Issue {{id_0}}"
