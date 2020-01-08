@@ -33,6 +33,8 @@ Take a snapshop of the Juniper network devices post event state `./jsnapy.sh --s
 ### Example Successful Test
 
 ```bash
+./jsnapy.sh --check pre post -f config.yml
+
 **************************** Device: 10.1.1.1 ****************************
 Tests Included: test_bgp_peers
 ************************* Command: show bgp summary *************************
@@ -57,6 +59,7 @@ Overall Tests passed!!!
 ### Example Failed Test
 
 ```bash
+./jsnapy.sh --check pre post -f config.yml
 **************************** Device: 10.1.1.1 ****************************
 Tests Included: test_bgp_peers
 ************************* Command: show bgp summary *************************
