@@ -7,3 +7,4 @@ tests:
   - isis_adjacency.yml
   - interface_status.yml
   - lldp.yml
+  - route-table-summary.yml
