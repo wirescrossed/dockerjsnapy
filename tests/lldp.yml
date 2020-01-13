@@ -7,4 +7,5 @@ test_lldp_peers:
         - './lldp-remote-system-name'
       tests:
         - no-diff: lldp-remote-system-name
-          err: "Test Failed!! LLDP {{id_0}} {{id_1}} got changed."
+          err: "Failed: LLDP {{id_0}} {{id_1}} changed."
+          info: "Success: LLDP {{id_0}} {{id_1}} not changed."

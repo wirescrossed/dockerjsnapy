@@ -4,5 +4,7 @@ test_isis_peers:
       xpath: //isis-adjacency-information/isis-adjacency
       id: './interface-name'
       tests:
-        - no-diff: adjacency-state
-          err: "Test Failed!! peer state for {{id_0}} got changed, before it was <{{pre['adjacency-state']}}>, now it is <{{post['adjacency-state']}}>"
+        - is-equal: ./adjacency-state, Up
+          err: "Failed: {{id_0}} is not adjacent"
+          info: "Success: {{id_0}} is adjacent"
+          ignore-null: True

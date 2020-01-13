@@ -6,4 +6,5 @@ test_power:
         - './name'
       tests:
         - contains: state, Online
-          err: "Test Failed!! Power State Issue {{id_0}}"
+          err: "Failed: Power State Issue {{id_0}}"
+          info: "Success: Power State {{id_0}} good."

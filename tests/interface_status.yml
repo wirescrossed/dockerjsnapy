@@ -6,3 +6,4 @@ test_interfaces:
       tests:
         - no-diff: ./oper-status
           err: "Failed: {{pre['name']}} oper-status got changed, before it was <{{pre['oper-status']}}>, now it is <{{post['oper-status']}}>"
+          info: "Success: {{pre['name']}} oper-status got changed, before it was <{{pre['oper-status']}}>, now it is <{{post['oper-status']}}>"

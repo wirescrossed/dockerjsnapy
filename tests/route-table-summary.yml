@@ -5,5 +5,5 @@ test_check_route_summary:
     id: ./table-name
     tests:
       - no-diff: active-route-count
-        info: "Active routes on: <{{post['table-name']}}> has not changed. Pre: <{{pre['active-route-count']}}>, Post <{{post['active-route-count']}}> "
-        err: "WARNING!! <{{post['table-name']}}> active routes have changed. Pre <{{pre['active-route-count']}}>, Post <{{post['active-route-count']}}> "
+        err: "Failed: <{{post['table-name']}}> active routes have changed. Pre: {{pre['active-route-count']}}, Post: {{post['active-route-count']}}"
+        info: "Success: Active routes on: <{{post['table-name']}}> has not changed. Pre: {{pre['active-route-count']}}, Post: {{post['active-route-count']}}"

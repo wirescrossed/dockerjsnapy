@@ -1,0 +1,25 @@
+test_bgp_rib:
+  - command: show bgp neighbor
+  - iterate:
+      xpath: //bgp-information/bgp-peer/bgp-rib
+      id: './name'
+      tests:
+        - no-diff: ./active-prefix-count
+          err: "Failed: {{id_0[0]}} active-prefix-count changed, before it was <{{pre['active-prefix-count']}}>, now it is <{{post['active-prefix-count']}}>"
+          info: "{{id_0[0]}} active-prefix-count unchanged."
+
+        - no-diff: ./bgp-rib/received-prefix-count
+          err: "Failed: {{id_0[0]}} received-prefix-count changed, before it was <{{pre['received-prefix-count']}}>, now it is <{{post['received-prefix-count']}}>"
+          info: "{{id_0[0]}} received-prefix-count unchanged."
+        
+        - no-diff: ./bgp-rib/accepted-prefix-count
+          err: "Failed: {{id_0[0]}} accepted-prefix-count changed, before it was <{{pre['accepted-prefix-count']}}>, now it is <{{post['accepted-prefix-count']}}>"
+          info: "{{id_0[0]}} accepted-prefix-count unchanged."
+
+        - no-diff: ./bgp-rib/suppressed-prefix-count
+          err: "Failed: {{id_0[0]}} suppressed-prefix-count changed, before it was <{{pre['suppressed-prefix-count']}}>, now it is <{{post['suppressed-prefix-count']}}>"
+          info: "{{id_0[0]}} suppressed-prefix-count unchanged."
+
+        - no-diff: ./bgp-rib/advertised-prefix-count
+          err: "Failed: {{id_0[0]}} advertised-prefix-count changed, before it was <{{pre['advertised-prefix-count']}}>, now it is <{{post['advertised-prefix-count']}}>"
+          info: "{{id_0[0]}} advertised-prefix-count unchanged."
