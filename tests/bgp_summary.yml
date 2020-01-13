@@ -1,8 +1,0 @@
-test_bgp_peers:
-  - command: show bgp summary
-  - iterate:
-      xpath: //bgp-information/bgp-peer
-      id: './peer-address'
-      tests:
-        - no-diff: peer-state
-          err: "Test Failed!! peer state for {{id_0}} got changed, before it was <{{pre['peer-state']}}>, now it is <{{post['peer-state']}}>"

@@ -3,7 +3,7 @@ hosts:
     username: admin
 tests:
   - power.yml
-  - bgp_summary.yml
+  - bgp.yml
   - isis_adjacency.yml
   - interface_status.yml
   - lldp.yml

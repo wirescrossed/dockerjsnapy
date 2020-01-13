@@ -1,0 +1,18 @@
+test_bgp:
+  - command: show bgp neighbor
+  - iterate:
+      xpath: //bgp-information/bgp-peer
+      id: './local-address'
+      tests:
+        - no-diff: ./bgp-rib/active-prefix-count
+          err: "Failed: {{id_0}} active-prefix-count changed, before it was <{{pre['active-prefix-count']}}>, now it is <{{post['active-prefix-count']}}>"
+        - no-diff: ./bgp-rib/received-prefix-count
+          err: "Failed: {{id_0}} received-prefix-count changed, before it was <{{pre['received-prefix-count']}}>, now it is <{{post['received-prefix-count']}}>"
+        - no-diff: ./bgp-rib/accepted-prefix-count
+          err: "Failed: {{id_0}} accepted-prefix-count changed, before it was <{{pre['accepted-prefix-count']}}>, now it is <{{post['accepted-prefix-count']}}>"
+        - no-diff: ./bgp-rib/suppressed-prefix-count
+          err: "Failed: {{id_0}} suppressed-prefix-count changed, before it was <{{pre['suppressed-prefix-count']}}>, now it is <{{post['suppressed-prefix-count']}}>"
+        - no-diff: ./bgp-rib/advertised-prefix-count
+          err: "Failed: {{id_0}} advertised-prefix-count changed, before it was <{{pre['advertised-prefix-count']}}>, now it is <{{post['advertised-prefix-count']}}>"
+        - is-equal: ./peer-state, Established
+          err: "Failed: {{id_0}} is not Established"
