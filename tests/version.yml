@@ -1,0 +1,11 @@
+test_version:
+  - command: show version
+  - iterate:
+      xpath: //software-information
+      id:
+        - './junos-version'
+      tests:
+        - is-equal: ./junos-version, 18.4R2-S3
+          err: "Failed: Junos software version {{id_0}} not compliant."
+          info: "Success: Junos software version is compliant."
+          ignore-null: True
