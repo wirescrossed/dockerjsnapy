@@ -2,6 +2,7 @@ hosts:
   - device: 10.1.1.1
     username: admin
 tests:
+  - version.yml
   - power.yml
   - bgp.yml
   - bgp-rib.yml
